@@ -109,7 +109,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | "ability" is checked with $user->can(). Null allows any authenticated
-    | panel user. The default matches SaaSykit's "update settings" permission.
+    | panel user. The default works with a Gate ability or a Spatie
+    | Permission permission named "update settings".
     |
     */
 

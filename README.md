@@ -10,14 +10,6 @@ Configurable media storage for Laravel + Spatie Media Library. Store uploads loc
 
 ## Installation
 
-The package is private. Composer needs GitHub access once per machine/server:
-
-```bash
-composer config --global github-oauth.github.com <token>   # fine-grained token, read-only "Contents" on this repo
-```
-
-Then in the project:
-
 ```bash
 composer config repositories.r2-media vcs https://github.com/scbudgetweb/laravel-r2-media
 composer require scbudgetweb/laravel-r2-media
@@ -34,7 +26,7 @@ use Scbudgetweb\R2Media\Filament\R2MediaPlugin;
 $panel->plugin(R2MediaPlugin::make());
 ```
 
-Or, to avoid editing a panel provider (e.g. in SaaSykit, whose admin panel auto-discovers `app/Filament/Admin/Pages`), add an empty subclass in the discovered directory:
+Or, to avoid editing the panel provider when the panel uses `->discoverPages()`, add an empty subclass in the discovered directory:
 
 ```php
 namespace App\Filament\Admin\Pages;
@@ -42,7 +34,7 @@ namespace App\Filament\Admin\Pages;
 class MediaStorageSettings extends \Scbudgetweb\R2Media\Filament\Pages\MediaStorageSettings {}
 ```
 
-Access is checked with `$user->can(config('r2-media.filament.ability'))`. The default is `update settings` (SaaSykit's permission); set it to `null` to allow any panel user, or override `canAccess()` in your subclass.
+Access is checked with `$user->can(config('r2-media.filament.ability'))`. The default is `update settings` (works with a Gate ability or a Spatie Permission permission of that name); set it to `null` to allow any panel user, or override `canAccess()` in your subclass.
 
 ## Configuration
 
@@ -127,3 +119,7 @@ vendor/bin/phpunit
 ```
 
 Tests use Orchestra Testbench with `Storage::fake('r2')`, so the R2 path is the one under test.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

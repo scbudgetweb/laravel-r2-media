@@ -2,7 +2,7 @@
     "name": "scbudgetweb/laravel-r2-media",
     "description": "Configurable Cloudflare R2 / Amazon S3 / local storage for Spatie Media Library, with an optional Filament settings page and a media migration command.",
     "type": "library",
-    "license": "proprietary",
+    "license": "MIT",
     "keywords": ["laravel", "cloudflare", "r2", "s3", "media-library", "filament"],
     "authors": [
         {

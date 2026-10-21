@@ -22,7 +22,7 @@ use UnitEnum;
  * Admin page to choose the media disk and manage R2/S3 credentials.
  *
  * Register it with R2MediaPlugin, or extend it in a panel's discovered
- * pages directory (e.g. SaaSykit's app/Filament/Admin/Pages).
+ * pages directory (see ->discoverPages()).
  */
 class MediaStorageSettings extends Page
 {
